@@ -12,6 +12,12 @@
     box-sizing: border-box;
 }
 
+.container {
+    width: 1080px;
+    margin: 0 auto;
+    height: 100vh;
+}
+
 h1 {
     color: var(--purple);
 }
@@ -43,12 +49,11 @@ p {
     top: 150px;
 }
 
-
-
-
 .countdown-area {
     display: flex;
     position: absolute;
+    width: 494px;
+    height: 172px;
     left: 123px;
     top: 187px;
     flex-direction: column;
@@ -64,10 +69,25 @@ p {
     margin: 15px 25px 15px 25px
 }
 
+.subscribe-area {
+    position: absolute;
+    width: 349px;
+    height: 21px;
+    left: 196px;
+    top: 405px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+}
 
 button {
+    position: absolute;
     height: 46px;
     width: 160px;
+    left: 290px;
+    top: 457px;
     background-color: var(--purple);
     border-radius: 10px;
     color: aliceblue;
@@ -76,10 +96,10 @@ button {
     margin-top: 35px;
 }
 
-.botton-image {
-    position: fixed;
+.bottom-image {
+    position: absolute;
     width: 1366px;
     height: 229px;
     left: 0px;
-    top: 542px;
+    top: 704px;
 }
