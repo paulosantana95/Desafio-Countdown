@@ -23,8 +23,8 @@ body {
     justify-content: center;
     flex-direction: column;
     position: relative;
-    width: 1371px;
-    height: 771px;
+    width: 1366px;
+    height: 768px;
     margin: 0 auto;
     border: 5px solid #6C63FF;
     margin-top: 80px;
@@ -128,16 +128,15 @@ button {
 }
 
 .modal {
-    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
     align-self: center;
-    width: 20%;
-    height: 55%;
+    width: 25%;
+    height: 60%;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
     background: rgba(0,0,0,0.9);
-    z-index: 99999;
+    z-index: 2;
     opacity:0;
     -webkit-transition: opacity 400ms ease-in;
     -moz-transition: opacity 400ms ease-in;
@@ -155,7 +154,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 50px;
     height: 100%;
     width: 100%;
 }
@@ -183,11 +182,11 @@ button {
 } */
 
 .fechar {
-    position: absolute;
-    width: 25px;
+    position: relative;
+    width: 22px;
     height: 25px;
-    right: 10px;
-    top: 10px;
+    left: 140px;
+    top: 7px;
     text-align: center;
     line-height: 22px;
     margin-top: 5px;
@@ -200,8 +199,6 @@ button {
 a:link, a:active, a:visited{
     text-decoration: none;
 }
-
-
 
 .bottom-image {
     position: absolute;
