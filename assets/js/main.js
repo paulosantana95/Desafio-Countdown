@@ -9,14 +9,21 @@ function updateCountDownTime () {
     const currentTime = new Date();
     const diff = lastTime - currentTime;
 
-    const days = Math.floor(diff/ 1000 / 60 / 60 / 24);
-    const hours = Math.floor(diff/ 1000 / 60 / 60) % 24;
-    const minutes = Math.floor(diff/ 1000 / 60) % 60;
-    const seconds = Math.floor(diff/ 1000) % 60;
-
-    document.querySelector("h2").innerHTML = `${leftZeros(days)}  :  ${leftZeros(hours)}  :  ${leftZeros(minutes)}  :  ${leftZeros(seconds)}`
-
-    console.log(days, hours, minutes, seconds);
+    if(diff <= 0) {
+        clearInterval();
+    } else {
+        
+        const days = Math.floor(diff/ 1000 / 60 / 60 / 24);
+        const hours = Math.floor(diff/ 1000 / 60 / 60) % 24;
+        const minutes = Math.floor(diff/ 1000 / 60) % 60;
+        const seconds = Math.floor(diff/ 1000) % 60;
+        
+        document.querySelector("h2").innerHTML = `${leftZeros(days)}  :  ${leftZeros(hours)}  :  ${leftZeros(minutes)}  :  
+        ${leftZeros(seconds)}`;
+    
+        console.log(days, hours, minutes, seconds);
+    }
+    
 }
 
 setInterval(updateCountDownTime, 1000);
