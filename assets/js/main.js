@@ -6,7 +6,7 @@ const hourInMilliseconds = minutesInMilliseconds * 60;
 const dayInMilliseconds = hourInMilliseconds * 24;
 
 const currentDate = new Date().getTime();
-const lastDate = new Date('2022-03-03 23:59:59').getTime();
+const lastDate = new Date('2022-03-10 23:59:59').getTime();
 
 
 // function formatTime(time) {
