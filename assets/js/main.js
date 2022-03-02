@@ -18,14 +18,13 @@ function updateCountDownTime () {
         const minutes = Math.floor(diff/ 1000 / 60) % 60;
         const seconds = Math.floor(diff/ 1000) % 60;
         
-        document.querySelector("h2").innerHTML = `${leftZeros(days)}  :  ${leftZeros(hours)}  :  ${leftZeros(minutes)}  :  
+        document.querySelector("#countdown").innerHTML = `${leftZeros(days)}  :  ${leftZeros(hours)}  :  ${leftZeros(minutes)}  :  
         ${leftZeros(seconds)}`;
     
         console.log(days, hours, minutes, seconds);
     }
     
 }
-
 setInterval(updateCountDownTime, 1000);
 
 
