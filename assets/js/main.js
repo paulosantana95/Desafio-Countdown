@@ -1,75 +1,58 @@
-'user strict';
+const lastTime = new Date('2022-03-10 23:59:59');
 
-const secondsInMilliseconds = 1000;
-const minutesInMilliseconds = secondsInMilliseconds * 60;
-const hourInMilliseconds = minutesInMilliseconds * 60;
-const dayInMilliseconds = hourInMilliseconds * 24;
+//No zero left correction
+const leftZeros = function(number) {
+    return String(number).padStart(2, '0')
+}
+// countdown function
+function updateCountDownTime () {
+    const currentTime = new Date();
+    const diff = lastTime - currentTime;
 
-const currentDate = new Date().getTime();
-const lastDate = new Date('2022-03-10 23:59:59').getTime();
+    const days = Math.floor(diff/ 1000 / 60 / 60 / 24);
+    const hours = Math.floor(diff/ 1000 / 60 / 60) % 24;
+    const minutes = Math.floor(diff/ 1000 / 60) % 60;
+    const seconds = Math.floor(diff/ 1000) % 60;
+
+    document.querySelector("h2").innerHTML = `${leftZeros(days)}  :  ${leftZeros(hours)}  :  ${leftZeros(minutes)}  :  ${leftZeros(seconds)}`
+
+    console.log(days, hours, minutes, seconds);
+}
+
+setInterval(updateCountDownTime, 1000);
 
 
+
+
+//OLD CODE!
 // function formatTime(time) {
 //     return time < 10 ? `0${time}` : time;
 // }
 
+// const currentTime = (time) => {
+//     const qtdSegundos = time % 60;
+//     const qtdMinutos = Math.floor((time % (60 * 60)) / 60);
+//     const qtdHoras = Math.floor((time % (60 * 60 * 24)) / (60 * 60));
+//     const qtdDias = Math.floor(time / (60 * 60 * 24));
 
-// function countdown(){
-    
-//         const dateDiff = lastDate - currentDate;
-//         //days
-//         const days = Math.floor(dateDiff /dayInMilliseconds);
-//         //hours
-//         const hours = Math.floor(dateDiff % dayInMilliseconds / hourInMilliseconds);
-//         //minutes
-//         const minutes = Math.floor(dateDiff % hourInMilliseconds / minutesInMilliseconds);
-//         //seconds
-//         const seconds = Math.floor(dateDiff % minutesInMilliseconds / secondsInMilliseconds);
-
-//         const newDays = formatTime(days);
-//         const newHours = formatTime(hours);
-//         const newMinutes = formatTime(minutes);
-//         const newSeconds = formatTime(seconds);
-
-//         document.querySelector("h2").innerHTML = `${newDays} : ${newHours} : ${newMinutes} : ${newSeconds}`;
+//     document.querySelector("h2").innerHTML = `${formatTime(qtdDias)}  :  ${formatTime(qtdHoras)}  :  ${formatTime(qtdMinutos)}  :  ${formatTime(qtdSegundos)}`
 // }
-// setTimeout(countdown, 1000);
 
-function formatTime(time) {
-    return time < 10 ? `0${time}` : time;
-}
+// const countdown = (time) => {
+//     const stopCount = () => clearInterval(timer)
+//     const count = () => {
+//         if(time == 0){
+//             stopCount();
+//         }
+//         currentTime(time);
+//         time--;
 
-const currentTime = (time) => {
-    const qtdSegundos = time % 60;
-    const qtdMinutos = Math.floor((time % (60 * 60)) / 60);
-    const qtdHoras = Math.floor((time % (60 * 60 * 24)) / (60 * 60));
-    const qtdDias = Math.floor(time / (60 * 60 * 24));
+//     }
+//     const timer = setInterval(count ,1000);
+// }
 
-    document.querySelector("h2").innerHTML = `${formatTime(qtdDias)}  :  ${formatTime(qtdHoras)}  :  ${formatTime(qtdMinutos)}  :  ${formatTime(qtdSegundos)}`
-}
+// const timeLeft = () => {
+//     return Math.floor((lastDate - currentDate)/1000);
+// }
 
-const countdown = (time) => {
-    const stopCount = () => clearInterval(timer)
-    const count = () => {
-        if(time == 0){
-            stopCount();
-        }
-        currentTime(time);
-        time--;
-
-    }
-    const timer = setInterval(count ,1000);
-}
-
-const timeLeft = () => {
-    return Math.floor((lastDate - currentDate)/1000);
-}
-
-countdown(timeLeft());
-
-
-
-
-
-
-
+// countdown(timeLeft())
