@@ -14,9 +14,9 @@
 
 .container {
     display: flex;
-    justify-content: flex-start;
     /* border: 5px solid #6C63FF; */
     margin-top: 60px;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -55,23 +55,27 @@ p {
 .rocket-image {
     display: flex;
     justify-content: center;
+    width: 607px;
 }
+
+@media (max-width: 900px) {
+    .rocket-image {
+        display: none;
+    }
+  }
 
 .countdown-area {
     display: flex;
     float: left;
     /* width: 494px; */
-    height: 172px;
-    margin-left: 360px;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 50px;
+    /* padding-bottom: 100px; */
 }
 
 .timer-text-area {
     display: flex;
     justify-content: center;
-    justify-items: center;
     text-align: center;
     flex-direction: row;
     padding-right: 5px;
@@ -93,7 +97,6 @@ p {
 }
 
 button {
-    height: 46px;
     background-color: var(--purple);
     border-radius: 10px;
     color: aliceblue;
@@ -102,13 +105,15 @@ button {
     cursor: pointer;
 }
 
-.subscribe {
+.subscribe-button {
     height: 46px;
     width: 160px;
     margin-top: 31px;
+    margin-bottom: 50px;
 }
 
 #modal div button {
+    height: 46px;
     width: 260px;
 }
 
@@ -119,13 +124,11 @@ button {
     flex-direction: column;
     justify-items: center;
     visibility: hidden;
-    margin-left: 750px;
     width: 350px;
     height: 450px;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
     background: rgba(0,0,0,0.9);
     z-index: 1;
-    pointer-events: none;
     border-radius: 10px;
 }
 
@@ -174,18 +177,17 @@ button {
 } */
 
 .fechar {
-    position: relative;
     width: 22px;
     height: 25px;
-    left: 140px;
-    top: 7px;
     text-align: center;
     line-height: 22px;
-    margin-top: 5px;
+    margin-left: 310px;
+    margin-top: 15px;
     background: #ff4545;
     border-radius: 50%;
     font-size: 22px;
     color: #8d0000;
+    cursor: pointer;
 }
 
 a:link, a:active, a:visited{

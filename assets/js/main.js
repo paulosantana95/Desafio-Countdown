@@ -36,9 +36,9 @@ function clickSubmit() {
 }
 
 function clickClosed() {
-    const x = document.querySelector('#fechar')
+    const modal = document.querySelector('#modal')
 
-    
+    modal.className="";
 
 }
 
