@@ -129,14 +129,17 @@ button {
     background: rgba(0,0,0,0.9);
     z-index: 1;
     border-radius: 10px;
+    -webkit-transition: 400ms ease-out;
+    -moz-transition: 400ms ease-out;
+    transition: 400ms ease-out;
 }
 
 #modal.show {
     visibility: visible;
     opacity: 1;
-    -webkit-transition: opacity 400ms ease-in;
-    -moz-transition: opacity 400ms ease-in;
-    transition: opacity 400ms ease-in;
+    -webkit-transition: opacity 400ms ease-in-out, 400ms ease-out;
+    -moz-transition: opacity 400ms ease-in-out, 400ms ease-out;
+    transition: opacity 400ms ease-in, 400ms ease-out;
 }
 
 .modal:target {
