@@ -17,6 +17,7 @@
     justify-content: flex-start;
     /* border: 5px solid #6C63FF; */
     margin-top: 60px;
+    flex-wrap: wrap;
 }
 
 
@@ -47,6 +48,8 @@ p {
 .top-image{
     display: flex;
     justify-content: center;
+    width: 100%;
+    height: auto;
 }
 
 .rocket-image {
@@ -59,9 +62,10 @@ p {
     float: left;
     /* width: 494px; */
     height: 172px;
-    margin-left: 123px;
+    margin-left: 360px;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 50px;
 }
 
 .timer-text-area {
@@ -90,7 +94,6 @@ p {
 
 button {
     height: 46px;
-    width: 160px;
     background-color: var(--purple);
     border-radius: 10px;
     color: aliceblue;
@@ -100,29 +103,38 @@ button {
 }
 
 .subscribe {
+    height: 46px;
+    width: 160px;
     margin-top: 31px;
 }
 
-.modal div button {
+#modal div button {
     width: 260px;
 }
 
-.modal {
+#modal {
     display: flex;
+    position: absolute;
+    opacity: 0;
     flex-direction: column;
-    align-items: center;
-    align-self: center;
+    justify-items: center;
+    visibility: hidden;
+    margin-left: 750px;
     width: 350px;
     height: 450px;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
     background: rgba(0,0,0,0.9);
-    z-index: 2;
-    opacity:0;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 10px;
+}
+
+#modal.show {
+    visibility: visible;
+    opacity: 1;
     -webkit-transition: opacity 400ms ease-in;
     -moz-transition: opacity 400ms ease-in;
     transition: opacity 400ms ease-in;
-    pointer-events: none;
-    border-radius: 10px;
 }
 
 .modal:target {
@@ -183,4 +195,6 @@ a:link, a:active, a:visited{
 .bottom-image {
     display: flex;
     justify-content: center;
+    width: 100%;
+    height: auto;
 }

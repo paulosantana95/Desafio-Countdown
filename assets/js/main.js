@@ -29,6 +29,21 @@ setInterval(updateCountDownTime, 1000);
 
 
 
+function clickSubmit() {
+    const modal = document.querySelector('#modal')
+
+    modal.className="show";
+}
+
+function clickClosed() {
+    const x = document.querySelector('#fechar')
+
+    
+
+}
+
+
+
 
 //OLD CODE!
 // function formatTime(time) {
