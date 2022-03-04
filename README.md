@@ -12,7 +12,6 @@ Neste desafio você deve criar uma página de `coming soon` para o lançamento d
 - HTML
 - CSS
 - JavaScript
-- 
 
 # ✅ **Desafio**
 
